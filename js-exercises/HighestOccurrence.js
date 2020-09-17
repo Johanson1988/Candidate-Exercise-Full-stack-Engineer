@@ -6,7 +6,7 @@
  * 
  * Esta aproximación funciona siempre que no se introduzcan números con string '1', como se deduce de los ejemplos aportados.
  * 
- * @param {*} input 
+ * @param {*} input The array to analyze
  */
 
 const highestOccurence = input =>
