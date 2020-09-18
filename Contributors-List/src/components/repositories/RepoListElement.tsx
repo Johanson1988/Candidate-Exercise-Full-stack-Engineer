@@ -46,7 +46,7 @@ const RepoListElement: React.FC<Props> = ({ name, description, collaborators }) 
             <StyledP>{name}</StyledP>
             <StyledSpan>{description}</StyledSpan>
             {
-                click ?
+                click && collaborators ?
                     <CollaboratorsContainer collaborators={collaborators} /> :
                     null
             }
