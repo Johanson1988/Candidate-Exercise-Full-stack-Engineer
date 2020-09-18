@@ -1,5 +1,3 @@
-import React from 'react';
-
 /**
  * React Functional Component
  * Renders not found message when the user is not found on the Database
@@ -7,10 +5,23 @@ import React from 'react';
  * PROPS:
  *  NO PROPS.
  */
+import React from 'react';
+import styled from 'styled-components';
+
+const StyledDiv = styled.div.attrs({
+    className: "card-panel teal"
+})`
+    width: 60%;
+    margin: 0 auto;
+`;
+
+const StyledHeading = styled.h3.attrs({
+    className: "white-text"
+})``;
 
 const NotFound: React.FC<{}> = () => 
-    <div className="card-panel teal" style={{maxWidth: "60%", margin: "0 auto"}}>
-        <h3 className="white-text">404 NOT FOUND</h3>;
-    </div>
+    <StyledDiv>
+        <StyledHeading>404 NOT FOUND</StyledHeading>;
+    </StyledDiv>
 
 export default NotFound;
