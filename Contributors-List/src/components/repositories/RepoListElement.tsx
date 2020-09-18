@@ -1,7 +1,3 @@
-import React, { useState } from "react";
-
-import CollaboratorsContainer from './CollaboratorsContainer';
-
 /**
  * React Functional Component
  * Renders  a card with each repository item
@@ -10,6 +6,23 @@ import CollaboratorsContainer from './CollaboratorsContainer';
  *  @param {string} name Repo's name.
  *  @param {string} description Repo's description
  */
+
+import React, { useState } from "react";
+
+import CollaboratorsContainer from './CollaboratorsContainer';
+import styled from 'styled-components';
+
+const StyledLi = styled.li.attrs({
+    className: "card-panel teal hoverable"
+})``;
+
+const StyledP = styled.li.attrs({
+    className: "white-text"
+})``;
+
+const StyledSpan = styled.span.attrs({
+    className: "white-text"
+})``;
 
 type Props = {
     name: string,
@@ -29,15 +42,15 @@ const RepoListElement: React.FC<Props> = ({ name, description, collaborators }) 
 
     return (
         
-        <li className="repo-li-element card-panel teal hoverable" onClick={handleClick}>
-            <p className="white-text">{name}</p>
-            <span className="white-text">{description}</span>
+        <StyledLi onClick={handleClick}>
+            <StyledP>{name}</StyledP>
+            <StyledSpan>{description}</StyledSpan>
             {
                 click ?
                     <CollaboratorsContainer collaborators={collaborators} /> :
                     null
             }
-        </li>
+        </StyledLi>
     )
 }
 
