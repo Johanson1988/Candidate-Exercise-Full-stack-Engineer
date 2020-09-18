@@ -1,7 +1,9 @@
 import React from "react";
 
-const CollaboratorsContainer: React.FC<{}> = () => {
-  
+type Props = { collaborators: [] }
+
+const CollaboratorsContainer: React.FC<Props> = ({ collaborators }) => {
+  console.log(collaborators);
   return (
     <div>
       <ul>
