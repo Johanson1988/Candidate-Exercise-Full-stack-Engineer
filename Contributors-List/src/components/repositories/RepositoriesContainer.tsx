@@ -19,6 +19,9 @@ import ReposSearchBar from './ReposSearchBar';
 import RepoListElement from './RepoListElement';
 import Loading from '../layout/Loading';
 
+/** Import API functions */
+import { getReposData } from '../../helpers/API';
+
 /** Styled Components */
 const StyledUl = styled.ul`
     max-width: 60%;
@@ -35,13 +38,13 @@ const StyledUl = styled.ul`
         display: none;
     }
 `;
-type Props = { repositories: any[] };
+type Props = { login: string };
 
 //TODO cambiar este any
 
 type ReposArray = { name: string, description: string, collaborators: { nodes: [] } }[];
 
-const RepositoriesContainer: React.FC<Props> = ({ repositories }) => {
+const RepositoriesContainer: React.FC<Props> = ({ login }) => {
 
     const [reposList, setReposList] = useState<ReposArray | null>(null);
     const [filter, setFilter] = useState<string>('');
@@ -50,15 +53,17 @@ const RepositoriesContainer: React.FC<Props> = ({ repositories }) => {
         setFilter(e.currentTarget.value);
     }
     /** Load repositories to the state on the first render */
-    useEffect((): void => {
-        setReposList(repositories);
-        // eslint-disable-next-line    
-    }, [repositories]);
-    /** If repositories has changed, set the filter state to empty */
     useEffect(():void => {
+        setReposList(null);
+        // Using an IIFE
+        (async function () {
+            setReposList(await getReposData(login));
+      })();
       setFilter('');
+
     // eslint-disable-next-line    
-    }, [repositories]);
+    },[login]);
+    /** If repositories has changed, set the filter state to empty */
     
     return(
         <>
