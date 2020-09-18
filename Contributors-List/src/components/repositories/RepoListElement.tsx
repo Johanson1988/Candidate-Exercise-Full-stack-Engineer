@@ -16,7 +16,7 @@ const StyledLi = styled.li.attrs({
     className: "card-panel teal hoverable"
 })``;
 
-const StyledP = styled.li.attrs({
+const StyledP = styled.p.attrs({
     className: "white-text"
 })``;
 
