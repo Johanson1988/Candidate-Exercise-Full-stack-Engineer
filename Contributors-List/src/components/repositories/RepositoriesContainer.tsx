@@ -23,7 +23,8 @@ import Loading from '../layout/Loading';
 const StyledUl = styled.ul`
     max-width: 60%;
     min-width: 40%;
-    max-height: 23em;
+    min-height: 30vh;
+    max-height: 50vh;
     overflow-y: scroll;
     /* Hide scrollbar for IE, Edge and Firefox */
     -ms-overflow-style: none;  /* IE and Edge */
