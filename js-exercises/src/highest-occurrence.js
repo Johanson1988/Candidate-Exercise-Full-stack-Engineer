@@ -11,6 +11,7 @@
 
 //Poner checkear que el array esté vacío y tal
 
+
 const highestOccurence = input =>
     input.reduce((accumulator, currentValue) => {
         const prevMaxOcurr = accumulator[accumulator.maxOcurrences[0]];
