@@ -30,19 +30,3 @@ const highestOccurence = input =>
         }
       return accumulator;
     }, {maxOcurrences: []}).maxOcurrences;
-
-const input1 = [2, 3, 2, 2, 2, 4, 2];
-console.log("Input 1: ", input1);
-console.log("highestOccurence(input1): ", highestOccurence(input1));
-
-const input2 = [2, 3, 2, 3, 2, 3, 4];
-console.log("Input 2: ", input2);
-console.log("highestOccurence(input2): ", highestOccurence(input2));
-
-const input3 = ['a', 'b', 'c', 'a', 'a', 'a', 'a'];
-console.log("Input 3: ", input3);
-console.log("highestOccurence(input3): ", highestOccurence(input3));
-
-const input4 = ['a', 'a', 2, 2, 2, 'a', 4];
-console.log("Input 4: ", input4);
-console.log("highestOccurence(input4): ", highestOccurence(input4));
