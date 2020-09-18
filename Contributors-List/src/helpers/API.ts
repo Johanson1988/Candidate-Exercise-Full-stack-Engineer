@@ -13,12 +13,17 @@ export const getUsersData = (username: string):any =>
 /** @const  {function} getReposData API call to Github to get repositories data, then 
  * object is filtered to pass only name and description. */
 
-export const getReposData = (username: string):any => 
+export const getReposData = (username: string):any =>
     axios.get(`https://api.github.com/users/${username}/repos`)
         .then(data => {
-
             return data.data.map((repo: { name: string; description: string; }) => {
                 return {name: repo.name, description: repo.description}
             });
         })
         .catch(() => null);
+
+export const getReposContributors = (username: string, repoName: string): any =>
+  axios.get(`https://api.github.com/repos/${username}/${repoName}/contributors`)
+    .then(data => {
+      console.log(data);
+    });
