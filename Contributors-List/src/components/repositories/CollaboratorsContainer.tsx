@@ -4,8 +4,8 @@ import styled from 'styled-components';
 const StyledUl = styled.ul.attrs({
   className: "collection"
 })`
-  width: 50%;
-  margin-top: 1em;
+  width: 70%;
+  margin: 1em auto;
 `;
 
 const StyledLi = styled.li.attrs({
