@@ -3,10 +3,6 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
    /*CSS Reset got from https://dev.to/hankchizljaw/a-modern-css-reset-6p3 */
 
-.App {
-  text-align: center;
-}
-
 /* Box sizing rules */
 *,
 *::before,
@@ -35,7 +31,7 @@ figcaption,
 blockquote,
 dl,
 dd {
-  margin: 1em auto;
+  margin: 0 auto;
 }
 
 /* Set core body defaults */
