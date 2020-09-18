@@ -29,7 +29,7 @@ const RepoListElement: React.FC<Props> = ({ name, description, collaborators }) 
 
     return (
         
-        <li className="repo-li-element card-panel teal" onClick={handleClick}>
+        <li className="repo-li-element card-panel teal hoverable" onClick={handleClick}>
             <p className="white-text">{name}</p>
             <span className="white-text">{description}</span>
             {
