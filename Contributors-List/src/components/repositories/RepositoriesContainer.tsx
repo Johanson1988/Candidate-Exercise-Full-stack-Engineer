@@ -42,7 +42,7 @@ type Props = { login: string };
 
 //TODO cambiar este any
 
-type ReposArray = { name: string, description: string, collaborators: { nodes: [] } }[];
+type ReposArray = { name: string, description: string }[];
 
 const RepositoriesContainer: React.FC<Props> = ({ login }) => {
 
@@ -81,7 +81,7 @@ const RepositoriesContainer: React.FC<Props> = ({ login }) => {
                             key={index}
                             name={repoElement.name}
                             description={repoElement.description}
-                            collaborators={repoElement.collaborators}
+                            login={login}
                         />
                     )
             }

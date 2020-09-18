@@ -27,10 +27,10 @@ const StyledSpan = styled.span.attrs({
 type Props = {
     name: string,
     description: string,
-    collaborators: { nodes: [] },
+    login: string,
 }
 
-const RepoListElement: React.FC<Props> = ({ name, description, collaborators }) => {
+const RepoListElement: React.FC<Props> = ({ name, description, login }) => {
     //TODO añadir tipos a este useState y a todos
     const [click, setClick] = useState(false);
 
@@ -45,8 +45,8 @@ const RepoListElement: React.FC<Props> = ({ name, description, collaborators }) 
             <StyledP>{name}</StyledP>
             <StyledSpan>{description}</StyledSpan>
             {
-                click && collaborators ?
-                    <CollaboratorsContainer collaborators={collaborators} /> :
+                click ?
+                    <CollaboratorsContainer repoName={name} username={login} /> :
                     null
             }
         </StyledLi>

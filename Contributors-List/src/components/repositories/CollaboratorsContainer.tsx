@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from 'styled-components';
 
+import { getReposContributors } from './../../helpers/API';
+
+/** Styled Components */
 const StyledUl = styled.ul.attrs({
   className: "collection"
 })`
@@ -12,20 +15,20 @@ const StyledLi = styled.li.attrs({
   className: "collection-item"
 })``;
 
+type Props = { username: string, repoName: string };
 
+const CollaboratorsContainer: React.FC<Props> = ({ username, repoName }) => {
 
-type Props = { collaborators: { nodes: [] } };
+  const contributors = getReposContributors(username, repoName)
+    .then((data: any) => console.log(data));
 
-type Collaborator = { login: string };
-
-const CollaboratorsContainer: React.FC<Props> = ({ collaborators: { nodes} }) => {
 
   return (
     <>
       <StyledUl>
         {
-          nodes.map((collaborator: Collaborator, index: number) => 
-            <StyledLi key={index}>{collaborator.login}</StyledLi> ) 
+          //nodes.map((collaborator: Collaborator, index: number) => 
+          //  <StyledLi key={index}>{collaborator.login}</StyledLi> ) 
         }
       </StyledUl>
     </>
