@@ -37,7 +37,6 @@ const RepoListElement: React.FC<Props> = ({ name, description, collaborators }) 
     const handleClick = (event: any) => {
         //TODO cambiar este any
         setClick(!click);
-        console.log(click);
     }
 
     return (
