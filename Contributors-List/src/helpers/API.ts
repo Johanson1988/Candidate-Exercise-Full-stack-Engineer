@@ -1,15 +1,12 @@
-import axios from 'axios';
-
 /** @const  {function} getUsersData API call to Github GraphQL API using a query to return:
  * - username
  * - avatar picture
  * - repositories' names
  * - repositories' descriptions
 */
+import axios from 'axios';
+require('dotenv').config()
 
-// ADD TOKEN HERE
-const token = "b84a5e403d7e7c9ee6ca6e8ae9863fe4cb158234";
-//TODO crear archivo .env
 //TODO cambiar este any
 export const getUsersData = (username: string):any =>
     axios({
@@ -34,7 +31,7 @@ export const getUsersData = (username: string):any =>
           }`
         },
         headers: {
-            Authorization: `Bearer ${token}`
+            Authorization: `Bearer ${process.env.REACT_APP_GITHUB_API_KEY}`
         }
     }).then(data => data.data.data.user)
     .catch(() => null)
