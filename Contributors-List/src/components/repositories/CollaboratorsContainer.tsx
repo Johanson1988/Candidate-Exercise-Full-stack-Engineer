@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from 'styled-components';
 
 import { getReposContributors } from './../../helpers/API';
-
+import Loading from './../layout/Loading';
 
 /** Styled Components */
 const StyledUl = styled.ul.attrs({
@@ -41,8 +41,10 @@ const CollaboratorsContainer: React.FC<Props> = ({ username, repoName }) => {
     <>
       <StyledUl>
         {
-          contributors.map((contributor: Contributor, index: number) => 
-            <StyledLi key={index}>{contributor}</StyledLi> ) 
+          contributors.length ?
+            contributors.map((contributor: Contributor, index: number) => 
+              <StyledLi key={index}>{contributor}</StyledLi>)
+            : <Loading />
         }
       </StyledUl>
     </>
