@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-
 /**
  * React Functional Component
  * Main Component of the app. If a username is valid, renders userdetails and repos.
@@ -7,6 +5,8 @@ import React, { useState } from "react";
  * PROPS:
  *  NO PROPS
  */
+
+import React, { useState } from "react";
 
 /** Import Components */
 import UserSearchBar from '../user/UserSearchBar';
