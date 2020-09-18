@@ -66,7 +66,7 @@ const RepositoriesContainer: React.FC<Props> = ({ repositories }) => {
                     <ReposSearchBar handleFilter={handleFilter} value={filter} /> :
                     <Loading />
             }
-            <StyledUl ºdata-testid="repos-container" className="repos-container">
+            <StyledUl data-testid="repos-container" className="repos-container">
             {
                 Array.isArray(reposList) && reposList.filter(
                         repoElement => repoElement.name.toLowerCase().includes(filter.toLowerCase())
@@ -79,7 +79,7 @@ const RepositoriesContainer: React.FC<Props> = ({ repositories }) => {
                         />
                     )
             }
-            </StyledUl>º
+            </StyledUl>
         </>
     )
 }
