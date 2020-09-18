@@ -21,6 +21,12 @@ const StyledForm = styled.form.attrs({
     margin: 0 auto;
 `;
 
+const StyledButton = styled.button.attrs({
+    className: "btn waves-effect waves-light"
+})`
+    margin-top: 1em;
+`;
+
 type Props = {
     findUser: (username:string) => void
 }
@@ -46,7 +52,7 @@ const UserSearchBar: React.FC<Props> = ({ findUser }) => {
                     e: React.ChangeEvent<HTMLInputElement>,
                 ): void => setUserName(e.target.value) }
             />
-            <button type="submit" className="btn waves-effect waves-light">Find User</button>
+            <StyledButton type="submit">Find User</StyledButton>
         </StyledForm>
     );
 }
