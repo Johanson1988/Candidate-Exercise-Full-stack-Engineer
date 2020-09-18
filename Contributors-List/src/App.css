@@ -127,16 +127,6 @@ select {
   margin-top: 1em;  
 }
 
-.repos-container {
-  max-width: 60%;
-  min-width: 40%;
-  max-height: 23em;
-  overflow-y: scroll;
-  /* Hide scrollbar for IE, Edge and Firefox */
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-  text-align: center;
-}
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .repos-container::-webkit-scrollbar {

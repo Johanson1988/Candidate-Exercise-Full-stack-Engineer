@@ -1,5 +1,3 @@
-import React, { useEffect, useState } from "react";
-
 /**
  * React Functional Component
  * Container for Repository elements. Recieves username as a prop,
@@ -13,11 +11,29 @@ import React, { useEffect, useState } from "react";
  *  @param {string} username username.
  */
 
+import React, { useEffect, useState } from "react";
+import styled from 'styled-components';
+
 /** Import Components */
 import ReposSearchBar from './ReposSearchBar';
 import RepoListElement from './RepoListElement';
 import Loading from '../layout/Loading';
 
+/** Styled Components */
+const StyledUl = styled.ul`
+    max-width: 60%;
+    min-width: 40%;
+    max-height: 23em;
+    overflow-y: scroll;
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    text-align: center;
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    ::-webkit-scrollbar {
+        display: none;
+    }
+`;
 type Props = { repositories: any[] };
 
 //TODO cambiar este any
@@ -50,7 +66,7 @@ const RepositoriesContainer: React.FC<Props> = ({ repositories }) => {
                     <ReposSearchBar handleFilter={handleFilter} value={filter} /> :
                     <Loading />
             }
-            <ul data-testid="repos-container" className="repos-container">
+            <StyledUl ºdata-testid="repos-container" className="repos-container">
             {
                 Array.isArray(reposList) && reposList.filter(
                         repoElement => repoElement.name.toLowerCase().includes(filter.toLowerCase())
@@ -63,7 +79,7 @@ const RepositoriesContainer: React.FC<Props> = ({ repositories }) => {
                         />
                     )
             }
-            </ul>
+            </StyledUl>º
         </>
     )
 }
