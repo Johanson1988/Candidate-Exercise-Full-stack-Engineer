@@ -5,15 +5,23 @@ describe('Maximum Subarray', function () {
     expect(typeof maxSubarraySum).toBe('function');
   });
 
-  it('First parameter larger', function () {
-    expect(maxOfTwoNumbers(2, 1)).toBe(2);
+  it('maxSubarraySum([], 4) returns null', function () {
+    expect(maxSubarraySum([], 4)).toEqual(null);
   });
 
-  it('Second parameter larger', function () {
-    expect(maxOfTwoNumbers(1, 3)).toBe(3);
+  it('maxSubarraySum([1,2,5,2,8,1,5], 4) returns 17', function () {
+    expect(maxSubarraySum([1,2,5,2,8,1,5], 4)).toEqual(17);
   });
 
-  it('First and Second parameter equal', function () {
-    expect(maxOfTwoNumbers(4, 4)).toBe(4);
+  it('maxSubarraySum([1,2,5,2,8,1,5], 2) returns 10', function () {
+    expect(maxSubarraySum([1,2,5,2,8,1,5], 2)).toEqual(10);
+  });
+
+  it('maxSubarraySum([4,2,1,6], 1) returns 6', function () {
+    expect(maxSubarraySum([4,2,1,6], 1)).toEqual(6);
+  });
+
+  it('maxSubarraySum([4,2,1,6,2], 4) returns 13', function () {
+    expect(maxSubarraySum([4,2,1,6,2], 4)).toEqual(13);
   });
 });
