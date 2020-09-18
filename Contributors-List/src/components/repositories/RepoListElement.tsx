@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import CollaboratorsContainer from './CollaboratorsContainer';
+
 /**
  * React Functional Component
  * Renders  a card with each repository item
@@ -28,6 +30,11 @@ const RepoListElement: React.FC<Props> = ({ name, description }) => {
         <li className="repo-li-element card-panel teal" onClick={handleClick}>
             <p className="white-text">{name}</p>
             <span className="white-text">{description}</span>
+            {
+                click ?
+                    <CollaboratorsContainer /> :
+                    null
+            }
         </li>
     )
 }
