@@ -59,11 +59,11 @@ const RepositoriesContainer: React.FC<Props> = ({ login }) => {
         (async function () {
             setReposList(await getReposData(login));
       })();
+      /** If repositories has changed, set the filter state to empty */
       setFilter('');
 
     // eslint-disable-next-line    
     },[login]);
-    /** If repositories has changed, set the filter state to empty */
     
     return(
         <>
