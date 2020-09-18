@@ -31,14 +31,13 @@ const StyledUsername = styled.h3`
 `;
 
 const StyledAvatar = styled.img.attrs({
-    className: "user-picture circle"
+    className: "circle"
 })`
   max-width: 100px;
   min-width: 90px;
   border: .25rem solid #26a69a;
   text-align: center;
 `;
-
 
 type Props = {
     imgSrc: string,
