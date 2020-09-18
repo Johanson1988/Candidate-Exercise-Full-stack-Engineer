@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-
 /**
  * React Functional Component
  * Renders a form with a text input to introduce username. Once the form is
@@ -9,6 +7,19 @@ import React, { useState } from "react";
  *  @param {function} findUser Callback function to trigger API call in parent component
  *  passing username introduced by the user.
  */
+
+import React, { useState } from "react";
+import styled from 'styled-components';
+
+/** Styled Components */
+
+const StyledForm = styled.form.attrs({
+    className: "row"
+})`
+    width: 60%;
+    text-align: center;
+    margin: 0 auto;
+`;
 
 type Props = {
     findUser: (username:string) => void
@@ -24,7 +35,7 @@ const UserSearchBar: React.FC<Props> = ({ findUser }) => {
     }
 
     return(
-        <form onSubmit={handleSubmit} data-testid="user-searchbar" className="searchbar row">
+        <StyledForm onSubmit={handleSubmit} data-testid="user-searchbar">
             <label htmlFor="user-searchbar">Introduce a Github username:</label>
             <input
                 type="text"
@@ -36,7 +47,7 @@ const UserSearchBar: React.FC<Props> = ({ findUser }) => {
                 ): void => setUserName(e.target.value) }
             />
             <button type="submit" className="btn waves-effect waves-light">Find User</button>
-        </form>
+        </StyledForm>
     );
 }
 
