@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 /**
  * React Functional Component
@@ -15,10 +15,21 @@ type Props = {
     description: string,
 }
 
-const RepoListElement: React.FC<Props> = ({ name, description }) => 
-    <li className="repo-li-element card-panel teal" >
-        <p className="white-text">{name}</p>
-        <span className="white-text">{description}</span>
-    </li>
+const RepoListElement: React.FC<Props> = ({ name, description }) => {
+    const [click, setClick] = useState(false);
+
+    const handleClick = (event: any) => {
+        setClick(!click);
+        console.log(click);
+    }
+
+    return (
+        
+        <li className="repo-li-element card-panel teal" onClick={handleClick}>
+            <p className="white-text">{name}</p>
+            <span className="white-text">{description}</span>
+        </li>
+    )
+}
 
 export default RepoListElement;
