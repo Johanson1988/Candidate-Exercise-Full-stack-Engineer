@@ -25,5 +25,5 @@ export const getReposData = (username: string):any =>
 export const getReposContributors = (username: string, repoName: string): any =>
   axios.get(`https://api.github.com/repos/${username}/${repoName}/contributors`)
     .then(data => {
-      console.log(data);
+      return data.data.map((collaborator: any) => collaborator.login);
     });
