@@ -116,18 +116,6 @@ select {
   text-align: center;
 }
 
-.searchbar {
-  max-width: 60%;
-  min-width: 40%;
-  text-align: center;
-  margin: 0 auto;
-}
-
-.searchbar > button {
-  margin-top: 1em;  
-}
-
-
 /* Hide scrollbar for Chrome, Safari and Opera */
 .repos-container::-webkit-scrollbar {
   display: none;

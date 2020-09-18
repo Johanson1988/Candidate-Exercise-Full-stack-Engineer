@@ -1,5 +1,3 @@
-import React from "react";
-
 /**
  * React Functional Component
  * Renders a searchbar to filter repositories.
@@ -10,14 +8,26 @@ import React from "react";
  *  is the value of the filter to filter repositories list.
  */
 
+import React from "react";
+import styled from 'styled-components';
+
+/** Styled Components */
+
+const StyledDiv = styled.div.attrs({
+    className: "row"
+})`
+    width: 60%;
+    text-align: center;
+    margin: 0 auto;
+`;
+
  type Props = {
     handleFilter: (e:React.FormEvent<HTMLInputElement>) => void,
     value: string,
 }
 
 const ReposSearchBar: React.FC<Props> = ({ handleFilter, value }) => 
-        <>
-            <div className="row searchbar" >
+            <StyledDiv>
                 <label htmlFor="repos-searchbar" style={{display: "none"}}>Repo's searchbar</label>
                 <input
                     type="text"
@@ -27,7 +37,6 @@ const ReposSearchBar: React.FC<Props> = ({ handleFilter, value }) =>
                     value={value} 
                     placeholder="Type to filter repos"       
                 />
-            </div>
-        </>
+            </StyledDiv>
 
 export default ReposSearchBar;
