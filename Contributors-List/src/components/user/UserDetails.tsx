@@ -19,15 +19,17 @@ const StyledUserDetailsContainer = styled.div`
 `;
 
 const StyledUserSection = styled.div`
-    margin: 0rem auto .5em auto;
+    margin: 1em auto;
     color: #26a69a;
     font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `;
 
 const StyledUsername = styled.h3`
     font-weight: 500;
     font-size: 3em;
-    max-width: 60%;
 `;
 
 const StyledAvatar = styled.img.attrs({
@@ -45,15 +47,13 @@ type Props = {
 }
 
 const UserDetails: React.FC<Props> = ({ imgSrc, username}) => 
-        <>
-            <StyledUserDetailsContainer>
-                <StyledUserSection>
-                    <StyledAvatar src={imgSrc} alt="user-profile" />
-                </StyledUserSection>
-                <StyledUserSection>
-                    <StyledUsername>{username}</StyledUsername>
-                </StyledUserSection>
-            </StyledUserDetailsContainer>
-        </>
+    <StyledUserDetailsContainer>
+        <StyledUserSection>
+            <StyledAvatar src={imgSrc} alt="user-profile" />
+        </StyledUserSection>
+        <StyledUserSection>
+            <StyledUsername>{username}</StyledUsername>
+        </StyledUserSection>
+    </StyledUserDetailsContainer>
 
 export default UserDetails;
