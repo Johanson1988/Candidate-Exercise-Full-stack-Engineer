@@ -9,6 +9,7 @@ import axios from 'axios';
 
 // ADD TOKEN HERE
 const token = "b84a5e403d7e7c9ee6ca6e8ae9863fe4cb158234";
+//TODO crear archivo .env
 
 export const getUsersData = (username: string):any =>
     axios({

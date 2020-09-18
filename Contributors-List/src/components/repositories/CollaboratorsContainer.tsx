@@ -1,14 +1,19 @@
 import React from "react";
 
-type Props = { collaborators: [] }
+type Props = { collaborators: { nodes: [] } };
 
-const CollaboratorsContainer: React.FC<Props> = ({ collaborators }) => {
-  console.log(collaborators);
+type Collaborator = { login: string };
+
+const CollaboratorsContainer: React.FC<Props> = ({ collaborators: { nodes} }) => {
+
   return (
     <div>
       <ul>
-        <li>Coll 1</li>
-        <li>Coll 2</li>
+        {
+          nodes.map((collaborator: Collaborator, index: number) => 
+            <li key={index}>{collaborator.login}</li>  
+          ) 
+        }
       </ul>
     </div>
   )

@@ -11,16 +11,18 @@ import CollaboratorsContainer from './CollaboratorsContainer';
  *  @param {string} description Repo's description
  */
 
-
 type Props = {
     name: string,
     description: string,
+    collaborators: { nodes: [] },
 }
 
-const RepoListElement: React.FC<Props> = ({ name, description }) => {
+const RepoListElement: React.FC<Props> = ({ name, description, collaborators }) => {
+    //TODO añadir tipos a este useState y a todos
     const [click, setClick] = useState(false);
 
     const handleClick = (event: any) => {
+        //TODO cambiar este any
         setClick(!click);
         console.log(click);
     }
@@ -32,7 +34,7 @@ const RepoListElement: React.FC<Props> = ({ name, description }) => {
             <span className="white-text">{description}</span>
             {
                 click ?
-                    <CollaboratorsContainer /> :
+                    <CollaboratorsContainer collaborators={collaborators} /> :
                     null
             }
         </li>

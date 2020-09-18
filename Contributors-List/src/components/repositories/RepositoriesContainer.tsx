@@ -20,7 +20,9 @@ import Loading from '../layout/Loading';
 
 type Props = { repositories: any[] };
 
-type ReposArray = { name: string, description: string}[];
+//TODO cambiar este any
+
+type ReposArray = { name: string, description: string, collaborators: { nodes: [] } }[];
 
 const RepositoriesContainer: React.FC<Props> = ({ repositories }) => {
 
@@ -39,8 +41,8 @@ const RepositoriesContainer: React.FC<Props> = ({ repositories }) => {
     useEffect(():void => {
       setFilter('');
     // eslint-disable-next-line    
-    },[repositories]);
-
+    }, [repositories]);
+    
     return(
         <>
             {
@@ -57,6 +59,7 @@ const RepositoriesContainer: React.FC<Props> = ({ repositories }) => {
                             key={index}
                             name={repoElement.name}
                             description={repoElement.description}
+                            collaborators={repoElement.collaborators}
                         />
                     )
             }
