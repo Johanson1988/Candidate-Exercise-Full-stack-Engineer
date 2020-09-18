@@ -52,12 +52,8 @@ const RepositoriesContainer: React.FC<Props> = ({ repositories }) => {
     /** Load repositories to the state on the first render */
     useEffect((): void => {
         setReposList(repositories);
+        setFilter('');
         // eslint-disable-next-line    
-    }, [repositories]);
-    /** If repositories has changed, set the filter state to empty */
-    useEffect(():void => {
-      setFilter('');
-    // eslint-disable-next-line    
     }, [repositories]);
     
     return(
