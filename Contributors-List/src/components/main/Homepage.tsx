@@ -32,7 +32,6 @@ const HomePage: React.FC<{}> = () => {
     const getUserName = async(username: string) => {
 
         const userData: userObject = await getUsersData(username);
-        console.log(userData);
         setUserData(userData);
     };
 

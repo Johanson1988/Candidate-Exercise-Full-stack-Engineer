@@ -32,11 +32,6 @@ const CollaboratorsContainer: React.FC<Props> = ({ username, repoName }) => {
     // eslint-disable-next-line    
     },[]);
 
-    useEffect(():void => {
-      console.log(contributors)
-    // eslint-disable-next-line    
-    },[contributors]);
-
   return (
     <>
       <StyledUl>
