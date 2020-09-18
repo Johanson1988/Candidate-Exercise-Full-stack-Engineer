@@ -21,6 +21,10 @@ const StyledDiv = styled.div.attrs({
     margin: 0 auto;
 `;
 
+const HiddenLabel = styled.label`
+    display: none;
+`;
+
  type Props = {
     handleFilter: (e:React.FormEvent<HTMLInputElement>) => void,
     value: string,
@@ -28,7 +32,7 @@ const StyledDiv = styled.div.attrs({
 
 const ReposSearchBar: React.FC<Props> = ({ handleFilter, value }) => 
             <StyledDiv>
-                <label htmlFor="repos-searchbar" style={{display: "none"}}>Repo's searchbar</label>
+                <HiddenLabel htmlFor="repos-searchbar" style={{display: "none"}}>Repo's searchbar</HiddenLabel>
                 <input
                     type="text"
                     data-testid="repos-searchbar"
