@@ -115,7 +115,7 @@ test("Displays repos list after submitting valid username", async() => {
     
     await wait (()=> expect(queryByTestId("repos-container")).not.toBeEmpty());
     
-    await wait(()=> expect(container.querySelectorAll(".repo-li-element").length).toBe(exampleReposObject.length));
+    await wait(()=> expect(container.querySelectorAll(".card-panel").length).toBe(exampleReposObject.length));
 });
 
 test("RepositoriesContainer container is not rendered if wrong username submitted", async() => {
@@ -170,6 +170,6 @@ test("Search bar is present if valid username submitted and working as expected"
     await wait (() => expect(getByLabelText("Repo's searchbar")).toBeInTheDocument());
     await wait (() => fireEvent.change(getByLabelText("Repo's searchbar"), { target: { value: filter} }));
     await wait (() => expect(getByLabelText("Repo's searchbar").value).toBe(filter));
-    await wait (()=> expect(container.querySelectorAll(".repo-li-element").length).toBe(filteredReposLength));
+    await wait (()=> expect(container.querySelectorAll(".card-panel").length).toBe(filteredReposLength));
     
 });
