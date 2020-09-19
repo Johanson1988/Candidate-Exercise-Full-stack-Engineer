@@ -67,6 +67,11 @@ averagePair([-1,0,3,4,5,6], 4.1)
 averagePair([], 4)
 // false
 ```
+## Tech Stack Used
+
+- Javascript ES6+
+- Jasmine (Testing)
+
 ## Testing instructions
 
 + git clone https://github.com/Johanson1988/Candidate-Exercise-Full-stack-Engineer.git 
