@@ -33,7 +33,7 @@ type Props = {
 const RepoListElement: React.FC<Props> = ({ name, description, login }) => {
     const [click, setClick] = useState<boolean>(false);
 
-    const handleClick = (event: any) => {
+    const handleClick = (event: React.MouseEvent) => {
         //TODO cambiar este any
         setClick(!click);
     }
