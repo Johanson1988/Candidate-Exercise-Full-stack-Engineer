@@ -63,8 +63,8 @@ const RepositoriesContainer: React.FC<Props> = ({ login }) => {
       setFilter('');
 
     // eslint-disable-next-line    
-    },[login]);
-    
+    }, [login]);
+
     return(
         <>
             {

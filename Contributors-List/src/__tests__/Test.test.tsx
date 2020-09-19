@@ -53,14 +53,9 @@ test("Renders user details after submitting a valid username", async() => {
      *  -After receiving data from API, picture is in the DOM
      */
 
-    mock.onPost().reply(200, {
-        data: {
-            user: {
-                login: "johanson1988",
-                avatarUrl: "dummy",
-                repositories: { nodes: [] } 
-            }
-        }
+    mock.onGet().reply(200, {
+        login: "johanson1988",
+        avatar_url: "dummy",
     });
 
     const { queryByText, getByTestId, getByAltText } = render(
@@ -87,7 +82,7 @@ test("Renders 404 message after submitting invalid username", async() => {
      *  -After receiving null from API, component NotFound is displayed
      */
 
-    mock.onPost().reply(200, null);
+    mock.onGet().reply(200, null);
     const { queryByText, getByTestId, } = render(
         <HomePage />
     );
@@ -108,14 +103,15 @@ test("Displays repos list after submitting valid username", async() => {
      *  -repos-container is not empty
      *  -repos-container lenght is equal to exampleReposObject length
      */
+    mock.onGet().reply(200, exampleReposObject);
     
     const { container, queryByTestId } = render(
-        <RepositoriesContainer repositories={exampleReposObject} />
+        <RepositoriesContainer login="johanson1988" />
     );
     
     await wait (()=> expect(queryByTestId("repos-container")).not.toBeEmpty());
     
-    await wait(()=> expect(container.querySelectorAll(".repo-li-element").length).toBe(exampleReposObject.length));
+    await wait(()=> expect(container.querySelectorAll(".card-panel").length).toBe(exampleReposObject.length));
 });
 
 test("RepositoriesContainer container is not rendered if wrong username submitted", async() => {
@@ -132,8 +128,7 @@ test("RepositoriesContainer container is not rendered if wrong username submitte
         data: {
             user: {
                 login: "",
-                avatarUrl: "",
-                repositories: { nodes: [] } 
+                avatarUrl: "", 
             }
         }
     });
@@ -157,9 +152,10 @@ test("Search bar is present if valid username submitted and working as expected"
      *  -searchbar value is equal to filter
      *  -repos-container lenght is equal to filtered exampleReposObject
      */
-
+    mock.onGet().reply(200, exampleReposObject);
+    
     const { container, getByLabelText } = render(
-        <RepositoriesContainer repositories={exampleReposObject} />
+        <RepositoriesContainer login="johanson1988" />
     );
 
     const filter:string = "-tu";
@@ -170,6 +166,5 @@ test("Search bar is present if valid username submitted and working as expected"
     await wait (() => expect(getByLabelText("Repo's searchbar")).toBeInTheDocument());
     await wait (() => fireEvent.change(getByLabelText("Repo's searchbar"), { target: { value: filter} }));
     await wait (() => expect(getByLabelText("Repo's searchbar").value).toBe(filter));
-    await wait (()=> expect(container.querySelectorAll(".repo-li-element").length).toBe(filteredReposLength));
-    
+    await wait (()=> expect(container.querySelectorAll(".card-panel").length).toBe(filteredReposLength)); 
 });
