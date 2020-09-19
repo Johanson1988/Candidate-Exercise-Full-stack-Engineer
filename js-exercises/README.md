@@ -67,7 +67,7 @@ averagePair([-1,0,3,4,5,6], 4.1)
 averagePair([], 4)
 // false
 ```
-## Tech Stack Used
+## Tech
 
 - Javascript ES6+
 - Jasmine (Testing)

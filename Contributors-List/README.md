@@ -5,11 +5,11 @@
 
 By using the GitHub REST API or the GitHub GraphQL API, build an application that allows a user to list the contributors of a given repository. No other requirement: show us your skills!
 
-## Solution Provided
+## Solution
 
 Small app which displays a searchbar to find a valid Github user. Once user is found, list of repositories will be displayed. If you click on the repository name, the list of collaborators will be displayed. This solution will work in etiher desktop or mobile phones.
 
-## Tech Stack Used
+## Tech Stack
 
 - React
 - Typescript

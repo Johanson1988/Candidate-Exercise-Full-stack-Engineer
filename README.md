@@ -1,6 +1,6 @@
 # Candidate Exercise – Full-stack Engineer - `README.md`
 
-## Solution provided by:
+## Author:
 * Johann Moreno Noda
 * [Linkedin](https://www.linkedin.com/in/johannmoreno/)
 * [Web Portfolio](https://web-portfolio-johann-moreno.herokuapp.com/)
