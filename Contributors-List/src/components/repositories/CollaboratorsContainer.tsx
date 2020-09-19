@@ -14,7 +14,7 @@ const StyledLi = styled.li.attrs({
 
 
 
-type Props = { collaborators: { nodes: {login: string}[] } };
+type Props = { collaborators: { nodes: {login: any}[] } };
 
 type Collaborator = { login: string };
 
