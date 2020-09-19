@@ -14,12 +14,12 @@ const StyledLi = styled.li.attrs({
 
 
 
-type Props = { collaborators: { nodes: [] } };
+type Props = { collaborators: { nodes: {login: string}[] } };
 
 type Collaborator = { login: string };
 
 const CollaboratorsContainer: React.FC<Props> = ({ collaborators: { nodes} }) => {
-
+  console.log(nodes);
   return (
     <>
       <StyledUl>
