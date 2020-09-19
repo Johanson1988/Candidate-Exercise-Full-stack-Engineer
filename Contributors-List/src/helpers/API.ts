@@ -7,7 +7,6 @@
 import axios from 'axios';
 require('dotenv').config()
 
-//TODO cambiar este any
 export const getUsersData = (username: string):any =>
     axios({
         method: 'post',
