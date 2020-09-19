@@ -1,14 +1,16 @@
 import React from 'react';
 
-/**Import testing library */
+/** Import testing library */
 import { render, fireEvent, wait } from '@testing-library/react';
-import HomePage from '../components/main/Homepage';
 
+/** Import Components */
+import HomePage from '../components/main/Homepage';
+import RepositoriesContainer from '../components/repositories/RepositoriesContainer';
+import CollaboratorsContainer from '../components/repositories/CollaboratorsContainer';
 /** Import axios for http request */
 import axios from 'axios';
 /** Import axios mock to avoid many API calls during testing */
 import MockAxios from 'axios-mock-adapter';
-import RepositoriesContainer from '../components/repositories/RepositoriesContainer';
 /** Example Object to mock API calls */
 import exampleReposObject from '../helpers/example-repos-object';
 
@@ -167,4 +169,20 @@ test("Search bar is present if valid username submitted and working as expected"
     await wait (() => fireEvent.change(getByLabelText("Repo's searchbar"), { target: { value: filter} }));
     await wait (() => expect(getByLabelText("Repo's searchbar").value).toBe(filter));
     await wait (()=> expect(container.querySelectorAll(".card-panel").length).toBe(filteredReposLength)); 
+});
+
+test("Collaborators are displayed when user clicks on repo's name", async() => {
+
+    /**
+     * //TODO hacer comentarios aqui
+     */
+
+    const dummyCollaborators: string[] = ['collaborator1', 'collaborator2'];
+    mock.onGet().reply(200, dummyCollaborators);
+    
+    const { container, getByLabelText } = render(
+        <CollaboratorsContainer username="johanson1988"  repoName="dummy repo" />
+    );
+    
+    await wait (() => expect(container.querySelectorAll(".collection-item").length).toBe(dummyCollaborators.length));
 });
