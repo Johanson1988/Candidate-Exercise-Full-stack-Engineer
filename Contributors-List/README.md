@@ -1,37 +1,26 @@
-# GitHub Repositories With Search Functionality - `README.md` 
+# Candidate Exercise – Full-stack Engineer - `README.md` 
+## Contributors List
 
 ## Description
 
-The task is to display the repositories and allow the user to filter through the repositories by name using a search bar. 
-Use the [official GitHub API](https://docs.github.com/en/rest) to fetch repositories per user.
+By using the GitHub REST API or the GitHub GraphQL API, build an application that allows a user to list the contributors of a given repository. No other requirement: show us your skills!
 
-![GitHub repo image](/src/images/github-readme.png)
+## Solution Provided
 
-## Requirements
-
-- The application must be written using React
-- You are required to use git for versioning
-- Feel free to use any additional plugin/module to help you get the task done more
-effectively
-- Google Chrome is the testing browser
-
-## Extra credits
-
-- +1 if you write tests
-- +1 If your [code is documented](https://google.github.io/styleguide/jsguide.html#jsdoc)
-- +1 If you’re up for the challenge, use the [v4 API](https://docs.github.com/en/graphql), which is built using GraphQL.
+Small app which displays a searchbar to find a valid Github user. Once user is found, list of repositories will be displayed. If you click on the repository name, the list of collaborators will be displayed. This solution will work in etiher desktop or mobile phones.
 
 ## Tech Stack Used
 
 - React
 - Typescript
-- TDD for testing
+- React testing library
 - MaterializeCSS
 - Github RestAPI
 - Github GraphQL API
 - Axios
 - MockAxiosAdapter
 - Responsive
+- Styled-Components
 
 ## User Stories
 
@@ -39,7 +28,7 @@ effectively
 
 - **User Search:** Search bar to look for Github users
 
-- **User view:** Shows user repositories
+- **User view:** Shows user repositories and collaborators
 
 # Client / Frontend
 
@@ -65,8 +54,17 @@ Repositories
  * RepositoriesContainer
  * ReposSearchBar
  * RepoListElement
+ * CollaboratorsContainer
 
 ## API Endpoints (backend routes)
+
+### REST Endpoints
+
+| HTTP Method | URL                         | Request Body                 | Success status | Error Status | Description                                                  |
+| ----------- | --------------------------- | ---------------------------- | -------------- | ------------ | ------------------------------------------------------------ |
+| GET         | `https://api.github.com/users/:username`           | {username}                | 200            | 404          | Gets user info          |
+| GET        | `https://api.github.com/users/:username/repos`                | {username}      | 200            | 404          | Gets user's repositories |
+| GET        | `https://api.github.com/repos/:username/:repositoryName/contributors`                | {username}      | 200            | 404          | Gets repositorie's collaborators |
 
 ### GraphQL Endpoint
 
@@ -75,26 +73,24 @@ Repositories
 ### GraphQL query
 
 ```sh
-    query {
-        user(login:"${username}") {
-            login
-            avatarUrl
-            repositories(first: 100, orderBy: {field:NAME, direction:ASC}) {
+    query: `{
+            user(login: "${username}") {
+              login
+              avatarUrl
+              repositories(first: 100, orderBy: {field: NAME, direction: ASC}) {
                 nodes {
-                    name
-                    description
+                  name
+                  description
+                  collaborators {
+                    nodes {
+                      login
                     }
+                  }
                 }
+              }
             }
-        }
+          }`
 ```
-
-### REST Endpoints
-
-| HTTP Method | URL                         | Request Body                 | Success status | Error Status | Description                                                  |
-| ----------- | --------------------------- | ---------------------------- | -------------- | ------------ | ------------------------------------------------------------ |
-| GET         | `https://api.github.com/users/:username`           | {username}                | 200            | 404          | Gets user info          |
-| GET        | `https://api.github.com/users/:username/repos`                | {username}      | 200            | 404          | Gets user's repositories |
 
 ## Installation instructions
 
@@ -103,8 +99,8 @@ Requires [Node.js](https://nodejs.org/) v4+ to run.
 In your command line, please type the following commands:
 
 ```sh
-$ git clone https://github.com/Johanson1988/GitHub-Repositories-With-Search-Functionality.git
-$ cd github-repositories-with-search-functionality
+$ git clone https://github.com/Johanson1988/Candidate-Exercise-Full-stack-Engineer.git
+$ cd Candidate-Exercise-Full-stack-Engineer/Contributors-List
 $ npm i
 $ npm run start
 ```
@@ -114,10 +110,13 @@ $ npm run start
 $ npm run test
 ```
 
-## REST Mode
+## GraphQL Mode
+
+This mode has a limitation. GraphQL API will only show collaborators of the repositories which the user has push access. If you are using the Github token provided by myself, you can check my repositories if you search for the user "Johanson1988". 
 
 ```sh
-$ git checkout REST-Mode
+$ git checkout GrapQL-Mode
+$ echo REACT_APP_GITHUB_API_KEY='insert github token here' >> .env
 $ npm run start
 ```
 
@@ -125,11 +124,11 @@ $ npm run start
 
 ### Trello
 
-[Trello Board](https://trello.com/b/7CPtRRzO/github-repo-mvst) 
+[Trello Board](https://trello.com/b/7CPtRRzO/candidate-exercise-full-stack-engineer) 
 
 ### Git
 
-[Github Link](https://github.com/screeeen/project-client)
+[Github Link](https://github.com/Johanson1988/Candidate-Exercise-Full-stack-Engineer)
 
 ## Author
 * Johann Moreno Noda
