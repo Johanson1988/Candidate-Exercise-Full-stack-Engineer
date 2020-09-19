@@ -19,3 +19,13 @@ Please, go the folder /js-exercises for running and installation instructions fo
 
 Please, go the folder /Contributors-list for running and installation instructions for exercises:
 + Contributors List
+
+## Links
+
+### Trello
+
+[Trello Board](https://trello.com/b/7CPtRRzO/candidate-exercise-full-stack-engineer) 
+
+### Git
+
+[Github Link](https://github.com/Johanson1988/Candidate-Exercise-Full-stack-Engineer)

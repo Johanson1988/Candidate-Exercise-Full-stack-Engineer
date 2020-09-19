@@ -73,3 +73,20 @@ averagePair([], 4)
 + Open the file js-exercises/SpecRunner.html in browser to run test.
 + Tests are localed in js-exercises/test
 + Functions are located in js-exercises/src
+
+## Links
+
+### Trello
+
+[Trello Board](https://trello.com/b/7CPtRRzO/candidate-exercise-full-stack-engineer) 
+
+### Git
+
+[Github Link](https://github.com/Johanson1988/Candidate-Exercise-Full-stack-Engineer)
+
+## Author
+* Johann Moreno Noda
+* [Linkedin](https://www.linkedin.com/in/johannmoreno/)
+* [Web Portfolio](https://web-portfolio-johann-moreno.herokuapp.com/)
+* [Github Repo](https://github.com/Johanson1988?tab=stars)
+* [CodeWars](https://www.codewars.com/users/johanson88)
