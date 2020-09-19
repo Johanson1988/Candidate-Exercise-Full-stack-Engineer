@@ -33,7 +33,7 @@ type Props = {
 
 const UserSearchBar: React.FC<Props> = ({ findUser }) => {
 
-    const [username, setUserName] = useState('');
+    const [username, setUserName] = useState<string>('');
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
