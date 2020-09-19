@@ -1,15 +1,13 @@
 /**
  * Function
  * 
- * Recorre el array creando un array, salvando en el objeto acumulador el elemento como key, y el número de ocurrencias como value.
- * También se guarda un array con el/los elemento/s con mayor número de coincidencias y este es el return de la función.
+ * Iterates the array, creating a new object storing a hash map with element repetitions.
+ * It also stores an array with the element/s with the higher number of repetitions. This array will be the final return.
  * 
- * Esta aproximación funciona siempre que no se introduzcan números con string '1', como se deduce de los ejemplos aportados.
+ * This approach will only work if no numbers are passed as string, as understood from provided examples.
  * 
  * @param {*} input The array to analyze
  */
-
-//Poner checkear que el array esté vacío y tal
 
 
 const highestOccurence = input =>
