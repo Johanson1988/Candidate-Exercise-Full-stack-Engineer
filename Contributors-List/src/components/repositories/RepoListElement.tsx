@@ -31,8 +31,7 @@ type Props = {
 }
 
 const RepoListElement: React.FC<Props> = ({ name, description, login }) => {
-    //TODO añadir tipos a este useState y a todos
-    const [click, setClick] = useState(false);
+    const [click, setClick] = useState<boolean>(false);
 
     const handleClick = (event: any) => {
         //TODO cambiar este any
