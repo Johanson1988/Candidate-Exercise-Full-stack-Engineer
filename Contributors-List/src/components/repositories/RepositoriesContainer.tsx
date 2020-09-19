@@ -40,8 +40,6 @@ const StyledUl = styled.ul`
 `;
 type Props = { login: string };
 
-//TODO cambiar este any
-
 type ReposArray = { name: string, description: string }[];
 
 const RepositoriesContainer: React.FC<Props> = ({ login }) => {
@@ -61,7 +59,6 @@ const RepositoriesContainer: React.FC<Props> = ({ login }) => {
       })();
       /** If repositories has changed, set the filter state to empty */
       setFilter('');
-
     // eslint-disable-next-line    
     }, [login]);
 
