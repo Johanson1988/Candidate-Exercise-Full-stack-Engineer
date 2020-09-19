@@ -179,7 +179,10 @@ test("Search bar is present if valid username submitted and working as expected"
 test("Collaborators are displayed when user clicks on repo's name", async() => {
 
     /**
-     * //TODO hacer comentarios aqui
+     * Passing an example Object as a Prop to Collaborators container
+     * 
+     * TEST IF:
+     *  -length of the list in the DOM is equal to object list
      */
 
     //const dummyCollaborators = { collaborators: { nodes: [{ login: 'collaborator1' }, { login: 'collaborator2' }] } }  ;
