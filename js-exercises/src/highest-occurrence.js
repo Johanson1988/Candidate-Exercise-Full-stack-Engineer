@@ -6,7 +6,7 @@
  * 
  * This approach will only work if no numbers are passed as string, as understood from provided examples.
  * 
- * @param {*} input The array to analyze
+ * @param {Array} input The array to analyze
  */
 
 
