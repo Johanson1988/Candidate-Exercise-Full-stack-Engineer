@@ -112,8 +112,7 @@ $ npm run test
 
 ## GraphQL Mode
 
-This mode has a limitation. GraphQL API will only show collaborators of the repositories which the user has push access. If you are using the Github token provided by myself, you can check my repositories if you search for the user "Johanson1988". 
-
+This mode has a limitation. GraphQL API will only show collaborators of the repositories which the user has push access. You will have to add a valid Github token on the seconde line below. If you are using the Github token provided by myself, you can check my repositories if you search for the user "Johanson1988". 
 ```sh
 $ git checkout GrapQL-Mode
 $ echo REACT_APP_GITHUB_API_KEY='insert github token here' >> .env
