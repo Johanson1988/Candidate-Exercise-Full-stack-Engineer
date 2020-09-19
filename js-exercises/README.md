@@ -69,6 +69,7 @@ averagePair([], 4)
 ```
 ## Testing instructions
 
-+ Open the file SpecRunner.html in browser to run test.
-+ Test are localed in test folder.
-+ Functions are located in src folder.
++ git clone https://github.com/Johanson1988/Candidate-Exercise-Full-stack-Engineer.git 
++ Open the file js-exercises/SpecRunner.html in browser to run test.
++ Tests are localed in js-exercises/test
++ Functions are located in js-exercises/src
