@@ -37,8 +37,6 @@ const StyledUl = styled.ul`
 `;
 type Props = { repositories: any[] };
 
-//TODO cambiar este any
-
 type ReposArray = { name: string, description: string, collaborators: { nodes: [] } }[];
 
 const RepositoriesContainer: React.FC<Props> = ({ repositories }) => {
