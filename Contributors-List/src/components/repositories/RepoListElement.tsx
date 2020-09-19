@@ -1,6 +1,7 @@
 /**
  * React Functional Component
  * Renders  a card with each repository item
+ * Listens to clicks on each item, if the item is clicked, list of contributors will be displayed
  * 
  * PROPS:
  *  @param {string} name Repo's name.
