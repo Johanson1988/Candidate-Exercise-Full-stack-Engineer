@@ -22,7 +22,7 @@ type Contributor =  string;
 
 const CollaboratorsContainer: React.FC<Props> = ({ username, repoName }) => {
 
-  const [contributors, setContributors] = useState([])
+  const [contributors, setContributors] = useState<Contributor[]>([])
 
     useEffect(():void => {
       // Using an IIFE
