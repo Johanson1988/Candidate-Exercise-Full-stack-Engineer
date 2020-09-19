@@ -64,7 +64,7 @@ Repositories
 | ----------- | --------------------------- | ---------------------------- | -------------- | ------------ | ------------------------------------------------------------ |
 | GET         | `https://api.github.com/users/:username`           | {username}                | 200            | 404          | Gets user info          |
 | GET        | `https://api.github.com/users/:username/repos`                | {username}      | 200            | 404          | Gets user's repositories |
-| GET        | `https://api.github.com/repos/:username/:repositoryName/contributors`                | {username}      | 200            | 404          | Gets repositorie's collaborators |
+| GET        | `https://api.github.com/repos/:username/:repositoryName/contributors`                | {username, repositoryName}      | 200            | 404          | Gets repositorie's collaborators |
 
 ### GraphQL Endpoint
 
