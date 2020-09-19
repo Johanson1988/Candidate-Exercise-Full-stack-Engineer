@@ -56,7 +56,7 @@ Repositories
  * RepoListElement
  * CollaboratorsContainer
 
-## API Endpoints (backend routes)
+## API Endpoints
 
 ### REST Endpoints
 
