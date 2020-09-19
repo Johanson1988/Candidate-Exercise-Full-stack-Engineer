@@ -22,6 +22,9 @@ export const getReposData = (username: string):any =>
         })
         .catch(() => null);
 
+/** @const  {function} getReposContributors API call to Github to get repositories data, then 
+ * object is filtered to pass only an array of collaborators logins. */
+
 export const getReposContributors = (username: string, repoName: string): any =>
   axios.get(`https://api.github.com/repos/${username}/${repoName}/contributors`)
     .then(data => {
